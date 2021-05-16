@@ -1,13 +1,13 @@
  ![HERO](assets/hero.png) 
- #     Corona's Game
+ #     Infecto Shooter
 
 
 
 Jogo no estilo batalha de naves estilizado para o tema mais atual, pandemia do novo Corona Virus.
 Construído usando a linguagem Java e a biblioteca Libgdx.
 
-site: https://brunomestieri.github.io/CoronasGame/
-Repo: https://github.com/Brunomestieri/CoronasGame
+site: https://brunomestieri.github.io/InfectoShooter/
+Repo: https://github.com/Brunomestieri/InfectoShooter/
 
 
 
