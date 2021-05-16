@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Tempo
+comment1.params=multiplicador
+comment1.target=void\ setMultiplicador(int)
+comment2.params=
+comment2.target=Tempo()
+comment3.params=
+comment3.target=void\ run()
+comment4.params=
+comment4.target=int\ getMult()
+numComments=5
