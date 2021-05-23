@@ -13,7 +13,6 @@ public class LevelScreen extends BaseScreen
 {
     private Spaceship spaceship;
     Sound col;
-
     int score;
     Label scoreLabel;
     Label gameOverMessage;
@@ -28,10 +27,6 @@ public class LevelScreen extends BaseScreen
         BaseActor.setWorldBounds(space);
         spaceship = new Spaceship(300,200, mainStage);
 
-        new Rock(600,500, mainStage);
-        new Rock(600,300, mainStage);
-        new Rock(600,100, mainStage);
-        new Rock(400,100, mainStage);
         new Rock(200,100, mainStage);
         new Rock(200,300, mainStage);
         new Rock(200,500, mainStage);
@@ -68,6 +63,10 @@ public class LevelScreen extends BaseScreen
         new Rock(200,300, mainStage);
         new Rock(200,500, mainStage);
         new Rock(400,500, mainStage);
+        new Rock(600,500, mainStage);
+        new Rock(600,300, mainStage);
+        new Rock(600,100, mainStage);
+        new Rock(400,100, mainStage);
 
         gameOver = false;
         score = 0;
@@ -83,9 +82,7 @@ public class LevelScreen extends BaseScreen
         uiStage.addActor(gameOverMessage);
         gameOverMessage.setVisible(false);
         Gdx.graphics.setTitle("=== Infecto Shooter ===");
-        
         col      = Gdx.audio.newSound(Gdx.files.internal("assets/col.wav"));
-        
     }
 
     public void update(float dt)

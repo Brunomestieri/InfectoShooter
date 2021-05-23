@@ -8,17 +8,11 @@ public class Rock extends BaseActor
     public Rock(float x, float y, Stage s)
     {
        super(x,y,s);
-        
        loadTexture("assets/sprite2.png");
-
-       float random = MathUtils.random(30);
-       
-       //addAction( Actions.forever( Actions.rotateBy(30 + random, 1) ) );   
-       
+       float random = MathUtils.random(30);       
        setSpeed(70 + random);
        setMaxSpeed(70 + random);
        setDeceleration(0);
-       
        setMotionAngle( MathUtils.random(360) );
     }
     

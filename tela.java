@@ -175,15 +175,17 @@ public class tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Game myGame = new SpaceGame();
-       LwjglApplication launcher = new LwjglApplication( myGame, "Space Rocks", 800, 600 );
-       tela tl = new tela();
-       tl.naoToca();
+       Launcher game = new Launcher();
+       Thread newGame = new Thread(game);
+       newGame.start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Ajuda ajuda = new Ajuda();
-        ajuda.setVisible(true);
+        //Ajuda ajuda = new Ajuda();
+        //ajuda.setVisible(true);
+        threadAjuda ajuda = new threadAjuda();
+        Thread help = new Thread(ajuda);
+        help.start();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     //===================================
