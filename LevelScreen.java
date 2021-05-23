@@ -93,52 +93,7 @@ public class LevelScreen extends BaseScreen
         
         for ( BaseActor rockActor : BaseActor.getList(mainStage, "Rock") )
         {
-            if (rockActor.overlaps(spaceship))
-            {
-                if (spaceship.shieldPower <= 0)
-                {
-                    //Explosion boom = new Explosion(0,0, mainStage);
-                    //boom.centerAtActor(spaceship);
-                    /*
-                    spaceship.remove();
-                    spaceship.setPosition(-1000,-1000);
-
-                    BaseActor messageLose = new BaseActor(0,0, uiStage);
-                    messageLose.loadTexture("assets/message-lose2.png");
-                    messageLose.centerAtPosition(400,300);
-                    messageLose.setOpacity(0);
-                    messageLose.addAction( Actions.fadeIn(1) );
-                    gameOver = true;
-                    scoreLabel.setText( "Pontuaçao: " + Integer.toString(score) );
-                    
-                    System.out.printf("Voce marcou: " + score + " pontos!");
-                    gameOverMessage.setVisible(true);
-                    scoreLabel.setVisible(false);
-                    gameOverMessage.setText( "Perdeu!!! Apenas " + Integer.toString(score) + " pontinhos..." );
-                    */
-                    /*int i = JOptionPane.showConfirmDialog(
-                    null, 
-                    "Voce perdeu! Pontuaçao atingida: " + score + " pontos!!! Deseja tentar novamente?"
-                    );
-                    if(i == JOptionPane.YES_OPTION) {
-                    SpaceGame.setActiveScreen( new LevelScreen() );
-                    }
-                    else if(i == JOptionPane.NO_OPTION) {
             
-                    }
-                    else if(i == JOptionPane.CANCEL_OPTION) {
-                    System.exit(0);
-                    }*/
-                }
-                else
-                {
-                    spaceship.shieldPower -= 34;
-                    Explosion boom = new Explosion(0,0, mainStage);
-                    boom.centerAtActor(rockActor);
-                    rockActor.remove();
-                }
-
-            }
           
             for ( BaseActor laserActor : BaseActor.getList(mainStage, "Laser") )
             {
@@ -150,8 +105,7 @@ public class LevelScreen extends BaseScreen
                     rockActor.remove();
                     score++;
                     scoreLabel.setText( "Pontuaçao: " + Integer.toString(score*tempo.getMult()) );
-                    score2.setText( "Vírus Neutralizados: " + score );
-                    //Gdx.graphics.setTitle("=== Infecto Shooter ===" + (tempo.getMult() * score));
+                    score2.setText( "Vírus Neutralizados: " + score );;
                     System.out.println("tempo + score" + tempo.getMult() + score);
                     col.play();
                 }
@@ -199,9 +153,6 @@ public class LevelScreen extends BaseScreen
     {
         if ( keycode == Keys.SPACE )
             spaceship.shoot();
-
-        if ( keycode == Keys.X )
-            spaceship.warp();
             
         return false;  
     }

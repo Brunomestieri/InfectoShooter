@@ -8,7 +8,6 @@ import com.badlogic.gdx.audio.Music;
 public class Spaceship extends BaseActor
 {
     private Thrusters thrusters;
-    private Shield shield;
     public int shieldPower;
     Sound laserSound;
 
@@ -19,8 +18,8 @@ public class Spaceship extends BaseActor
         loadTexture( "assets/heropq.png" );
         setBoundaryPolygon(8);
 
-        setAcceleration(2000);
-        setMaxSpeed(2000);
+        setAcceleration(1000);
+        setMaxSpeed(1000);
         setDeceleration(1000);
 
         
@@ -28,12 +27,7 @@ public class Spaceship extends BaseActor
         thrusters = new Thrusters(0,0, s);
         addActor(thrusters);
         thrusters.setPosition(-thrusters.getWidth(), 
-            getHeight()/2 - thrusters.getHeight()/2 );
-
-        shield = new Shield(0,0, s);
-        addActor(shield);
-        shield.centerAtPosition( getWidth()/2, getHeight()/2 );
-        shieldPower = 100;
+        getHeight()/2 - thrusters.getHeight()/2 );
         laserSound      = Gdx.audio.newSound(Gdx.files.internal("assets/laser.wav"));
     }
 
@@ -49,23 +43,12 @@ public class Spaceship extends BaseActor
         laserSound.play();
     }
 
-    public void warp()
-    {
-        if ( getStage() == null)
-            return;
-
-        Warp warp1 = new Warp(0,0, this.getStage());
-        warp1.centerAtActor(this);
-        setPosition(MathUtils.random(800), MathUtils.random(600));
-        Warp warp2 = new Warp(0,0, this.getStage());
-        warp2.centerAtActor(this);
-    }
-
+    
     public void act(float dt)
     {
         super.act( dt );
 
-        float degreesPerSecond = 500; // degrees per second
+        float degreesPerSecond = 350; // degrees per second
         if (Gdx.input.isKeyPressed(Keys.LEFT)) 
             rotateBy(degreesPerSecond * dt);
         if (Gdx.input.isKeyPressed(Keys.RIGHT))
@@ -85,7 +68,7 @@ public class Spaceship extends BaseActor
 
         wrapAroundWorld();
 
-        shield.setOpacity(shieldPower / 100f);
+        //shield.setOpacity(shieldPower / 100f);
     }
 
 }
