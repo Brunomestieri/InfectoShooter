@@ -191,7 +191,6 @@ public class tela extends javax.swing.JFrame {
     //===================================
     BgSound ft= new BgSound();
     Thread tr=new Thread(ft);
-   
     public void toca() {
         tr.start();
     }
@@ -199,7 +198,7 @@ public class tela extends javax.swing.JFrame {
         tr.stop();
     }
     //==================================
-     
+    
     public static void main(String args[]) {
         
         tela tl = new tela();

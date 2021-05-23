@@ -4,7 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.math.MathUtils;
 
 public class Rock extends BaseActor
-{  
+{          
     public Rock(float x, float y, Stage s)
     {
        super(x,y,s);
@@ -23,3 +23,21 @@ public class Rock extends BaseActor
         wrapAroundWorld();
     }
 }
+
+/*
+new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Gdx.app.postRunnable(new Runnable() {
+                    @Override
+                    public void run() {
+                        
+                        //==================================================
+                        
+                        }
+                    }
+                });
+            }
+        }).start();
+    }*/

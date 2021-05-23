@@ -26,47 +26,68 @@ public class LevelScreen extends BaseScreen
         space.setSize(800,600);
         BaseActor.setWorldBounds(space);
         spaceship = new Spaceship(300,200, mainStage);
+        
+        
+        
+        //========================================================================
+            new Thread(new Runnable() {
+            @Override
+            public void run() {
 
-        new Rock(200,100, mainStage);
-        new Rock(200,300, mainStage);
-        new Rock(200,500, mainStage);
-        new Rock(400,500, mainStage);
-        new Rock(600,500, mainStage);
-        new Rock(600,300, mainStage);
-        new Rock(600,100, mainStage);
-        new Rock(400,100, mainStage);
-        new Rock(200,100, mainStage);
-        new Rock(200,300, mainStage);
-        new Rock(200,500, mainStage);
-        new Rock(400,500, mainStage);
-        new Rock(600,500, mainStage);
-        new Rock(600,300, mainStage);
-        new Rock(600,100, mainStage);
-        new Rock(400,100, mainStage);
-        new Rock(200,100, mainStage);
-        new Rock(200,300, mainStage);
-        new Rock(200,500, mainStage);
-        new Rock(400,500, mainStage);
-        new Rock(600,500, mainStage);
-        new Rock(600,300, mainStage);
-        new Rock(600,100, mainStage);
-        new Rock(400,100, mainStage);
-        new Rock(200,100, mainStage);
-        new Rock(200,300, mainStage);
-        new Rock(200,500, mainStage);
-        new Rock(400,500, mainStage);
-        new Rock(600,500, mainStage);
-        new Rock(600,300, mainStage);
-        new Rock(600,100, mainStage);
-        new Rock(400,100, mainStage);
-        new Rock(200,100, mainStage);
-        new Rock(200,300, mainStage);
-        new Rock(200,500, mainStage);
-        new Rock(400,500, mainStage);
-        new Rock(600,500, mainStage);
-        new Rock(600,300, mainStage);
-        new Rock(600,100, mainStage);
-        new Rock(400,100, mainStage);
+                Gdx.app.postRunnable(new Runnable() {
+                    @Override
+                    public void run() {
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                        new Rock(200,500, mainStage);
+                        new Rock(400,500, mainStage);
+                        new Rock(600,500, mainStage);
+                        new Rock(600,300, mainStage);
+                        new Rock(600,100, mainStage);
+                        new Rock(400,100, mainStage);
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                        new Rock(200,500, mainStage);
+                        new Rock(400,500, mainStage);
+                        new Rock(600,500, mainStage);
+                        new Rock(600,300, mainStage);
+                        new Rock(600,100, mainStage);
+                        new Rock(400,100, mainStage);
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                        new Rock(200,500, mainStage);
+                        new Rock(400,500, mainStage);
+                        new Rock(600,500, mainStage);
+                        new Rock(600,300, mainStage);
+                        new Rock(600,100, mainStage);
+                        new Rock(400,100, mainStage);
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                        new Rock(200,500, mainStage);
+                        new Rock(400,500, mainStage);
+                        new Rock(600,500, mainStage);
+                        new Rock(600,300, mainStage);
+                        new Rock(600,100, mainStage);
+                        new Rock(400,100, mainStage);
+                        new Rock(200,100, mainStage);
+                        new Rock(200,300, mainStage);
+                    }
+                
+                });
+            }
+        }).start();
+    
+        
+    
+    
+    
+    //=============================================================================
 
         gameOver = false;
         score = 0;
@@ -84,7 +105,7 @@ public class LevelScreen extends BaseScreen
         Gdx.graphics.setTitle("=== Infecto Shooter ===");
         col      = Gdx.audio.newSound(Gdx.files.internal("assets/col.wav"));
     }
-
+    
     public void update(float dt)
     {
         

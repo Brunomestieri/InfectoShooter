@@ -2,8 +2,12 @@
 comment0.target=LevelScreen
 comment1.params=
 comment1.target=void\ initialize()
-comment2.params=dt
-comment2.target=void\ update(float)
-comment3.params=keycode
-comment3.target=boolean\ keyDown(int)
-numComments=4
+comment2.params=
+comment2.target=void\ run()
+comment3.params=
+comment3.target=void\ run()
+comment4.params=dt
+comment4.target=void\ update(float)
+comment5.params=keycode
+comment5.target=boolean\ keyDown(int)
+numComments=6
