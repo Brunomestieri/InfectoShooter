@@ -2,12 +2,15 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.audio.Music;
 
 public class Spaceship extends BaseActor
 {
     private Thrusters thrusters;
     private Shield shield;
     public int shieldPower;
+    Sound laserSound;
 
     public Spaceship(float x, float y, Stage s)
     {
@@ -31,6 +34,7 @@ public class Spaceship extends BaseActor
         addActor(shield);
         shield.centerAtPosition( getWidth()/2, getHeight()/2 );
         shieldPower = 100;
+        laserSound      = Gdx.audio.newSound(Gdx.files.internal("assets/laser.wav"));
     }
 
     public void shoot()
@@ -42,6 +46,7 @@ public class Spaceship extends BaseActor
         laser.centerAtActor(this);
         laser.setRotation( this.getRotation() );
         laser.setMotionAngle( this.getRotation() );
+        laserSound.play();
     }
 
     public void warp()

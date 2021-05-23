@@ -6,11 +6,14 @@ import com.badlogic.gdx.math.MathUtils;
 import javax.swing.*;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.audio.Music;
 
 public class LevelScreen extends BaseScreen
 {
     private Spaceship spaceship;
-    
+    Sound col;
+
     int score;
     Label scoreLabel;
     Label gameOverMessage;
@@ -80,6 +83,9 @@ public class LevelScreen extends BaseScreen
         uiStage.addActor(gameOverMessage);
         gameOverMessage.setVisible(false);
         Gdx.graphics.setTitle("=== Infecto Shooter ===");
+        
+        col      = Gdx.audio.newSound(Gdx.files.internal("assets/col.wav"));
+        
     }
 
     public void update(float dt)
@@ -147,6 +153,7 @@ public class LevelScreen extends BaseScreen
                     score2.setText( "Vírus Neutralizados: " + score );
                     //Gdx.graphics.setTitle("=== Infecto Shooter ===" + (tempo.getMult() * score));
                     System.out.println("tempo + score" + tempo.getMult() + score);
+                    col.play();
                 }
             }
         }
